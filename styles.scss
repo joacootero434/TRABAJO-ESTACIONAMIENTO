@@ -1,0 +1,128 @@
+
+$primary-color: #1A1A2E; 
+$secondary-color: #16213E; 
+$accent-color: #E94560; 
+$background-color: #222831; 
+$text-color: #ECECEC; 
+$white: #FFFFFF; 
+
+$font-family: 'Arial', sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+}
+
+header {
+  background-color: $primary-color;
+  color: $white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    font-weight: 300;
+    color: lighten($white, 10%);
+    margin-top: 0.2em;
+    letter-spacing: 0.5px;
+  }
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+
+  p {
+    max-width: 800px;
+    margin: 15px auto;
+    font-size: 1.1em;
+    color: darken($text-color, 10%);
+  }
+
+  iframe {
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 560px;
+  }
+}
+
+nav {
+  margin: 20px 0;
+  
+  a {
+    display: inline-block;
+    color: $white;
+    background-color: $accent-color;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: lighten($accent-color, 10%);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+footer {
+  background-color: $secondary-color;
+  color: $white;
+  padding: 15px;
+  font-size: 0.9em;
+  text-align: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2em;
+  }
+
+  header h2 {
+    font-size: 1em;
+  }
+
+  nav a {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
